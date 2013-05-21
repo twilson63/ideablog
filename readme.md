@@ -759,11 +759,21 @@ app.filter('mdImage', function() {
 app.css
 
 ``` css
-app.filter('mdImage', function() {
-  return function(input) {
-    if (input) {
-      return ['![',input.name, '](/uploads/',input.path,')'].join('');
-    }
-  };
-});
+.upload-button {
+  position: relative;
+  overflow: hidden;
+  margin-right: 4px;
+}
+.upload-button input {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  transform: translate(-300px, 0) scale(4);
+  font-size: 23px;
+  direction: ltr;
+  cursor: pointer;
+}
 ```
